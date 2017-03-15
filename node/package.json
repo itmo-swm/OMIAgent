@@ -11,6 +11,9 @@
   "dependencies": {
     "iotagent-node-lib": "*",
     "express": "*",
-    "request": "*"
+    "request": "*",
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "xml2js": "*"
   }
 }
