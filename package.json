@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "iotagent-node-lib": "*"
+    "iotagent-node-lib": "*",
+    "express": "*",
+    "request": "*"
   }
 }
