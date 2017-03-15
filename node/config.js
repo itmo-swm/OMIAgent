@@ -8,15 +8,22 @@ var config = {
         port: 4040
     },
     deviceRegistry: {
-        type: 'memory'
+        type: 'mongodb'
+    },
+    mongodb: {
+        host: 'mongo',
+        port: '27017',
+        db: 'iotagent',
+        retries: 5,
+        retryTime: 5
     },
     types: {
     },
     service: 'omitest',
-    subservice: '/omi',
+    subservice: '/',
     providerUrl: 'http://192.168.1.199:4040',
     deviceRegistrationDuration: 'P1M',
-    defaultType: 'Thing'
+    defaultType: 'thing'
 };
 
 module.exports = config;

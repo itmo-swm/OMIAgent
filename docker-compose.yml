@@ -1,0 +1,15 @@
+version: '2'
+services:
+  web:
+   build: .
+   ports:
+    - "4040:4040"
+    - "8080:8080"
+   links:
+    - mongo
+  mongo:
+    image: 'bitnami/mongodb'
+    volumes:
+      - "./db/mongo/:/bitnami/mongodb/"
+    ports:
+     - "27040:27017"
