@@ -6,7 +6,7 @@ var http = require('http');
 var xml2js = require('xml2js');
 
 var app = express();
-
+var iotAgentLib;
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -125,5 +125,7 @@ app.use('/', router);
 
 app.set('port', '3000');
 
-var server = http.createServer(app);
-server.listen(app.get('port'));
+module.exports.app = app;
+module.exports.setiotAgentLib = function(_iotAgentLib){
+	iotAgentLib  = _iotAgentLib;
+}

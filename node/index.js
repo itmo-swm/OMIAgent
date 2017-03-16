@@ -4,6 +4,9 @@ var iotAgentLib = require('iotagent-node-lib'),
     request = require('request'),
     config = require('./config');
 
+var xml = require('./xml');
+var server = http.createServer(xml.app);
+
 function parseUl(data, device) {
     function findType(name) {
         for (var i=0; i < device.active.length; i++) {
@@ -192,5 +195,7 @@ iotAgentLib.activate(config, function(error) {
                 console.log('Both APIs started successfully');
             }
         });
+	xml.setiotAgentLib(iotAgentLib);
+        server.listen(xml.app.get('port'));
     }
 });
